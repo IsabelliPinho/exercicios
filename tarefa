@@ -1,0 +1,59 @@
+//questão 1
+
+int main()
+{   float mb,b,gb,kb;
+    printf("\n Digite quantidade de Megabytes\n");
+    scanf("%f",&mb);
+    b = (mb*1024)*1024;
+    gb = (mb/1024);
+    kb = (mb*1024);
+    printf("\n Em Bytes = %3.f", b);
+    printf("\n Em Gigabytes = %f ",gb);
+     printf("\n Em kb = %3.f ",kb);
+    return 0;
+}
+
+//questão 6
+
+int main()
+{   int anoat,anonasc,id;
+    printf("\nDigite o ano atual\n");
+    scanf("%d",&anoat);
+     printf("\nDigite o ano do nascimento\n");
+      scanf("%d",&anonasc);
+      id = (anoat - anonasc);
+      printf("A idade é: %d",id);
+    return 0;
+}
+
+// questão 11
+
+int main()
+{   int cc;
+    float sal;
+    printf("\n Digite código do cargo:");
+    scanf ("%d",&cc);
+     printf("\n Digite o salário atual:");
+    scanf ("%f",&sal);
+    if (cc == 1){
+         printf("\n O aumento salário será:%2.f",((sal*0.4)+sal));
+    
+    }
+    if (cc == 2){
+         printf("\n O aumento salário será:%2.f",((sal*0.25)+sal));
+    
+    }
+     if (cc == 3){
+         printf("\n O aumento salário será:%2.f",((sal*0.1)+sal));
+    
+    }
+     if (cc == 4){
+         printf("\n O aumento salário será:%f",((sal*0.0005)+sal));
+    
+    }
+    else {
+        ("\n Código não cadastrado");
+    }
+    
+    return 0;
+}
