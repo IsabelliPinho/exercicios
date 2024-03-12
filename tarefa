@@ -57,3 +57,29 @@ int main()
     
     return 0;
 }
+
+//questão 14
+
+int main()
+{
+   int op;
+   float preco;
+   printf(" Digite o preço atual\n");
+    scanf("%f",&preco);
+    printf("Digite (1) Aumentar preço ou (2) Diminuir preço\n");
+    scanf("%d",&op);
+    if (op == 1){
+        float ad;
+        printf("Digite porcentagem adicional\n");
+        scanf("%f",&ad);
+        printf(" Valor final = %2.f",(preco*(ad/100))+preco );
+    }
+     if (op == 2){
+        float di;
+        printf("\nDigite porcentagem a subtrair");
+        scanf("%f",&di);
+        printf("\n Preço final = %2.f",preco - (preco*(di/100)));
+    }
+    
+    return 0;
+}
