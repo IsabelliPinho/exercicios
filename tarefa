@@ -127,3 +127,14 @@ int main()
 /* RESULTADO                                                              */
   printf("%s %d %s %d %s %d %s", /* ---são as máscaras de saída do printf */
           "Tem de vida:", ano, "ano(s)", mes, "mes(es)", dia, "dia(s).\n");
+
+//Utilização do sscanf
+int main() {
+    // Write C code here
+ char user [] = "Maria Eduarda 170 15";
+ char nome[50], snome[50];
+ int altura,idade;
+ sscanf(user, "%s%s%d%d", &nome,&snome,&altura,&idade);
+ printf("Primeiro nome: %s, Segundo nome: %s, Altura: %d, Idade: %d.", nome,snome,altura,idade);
+    return 0;
+}
