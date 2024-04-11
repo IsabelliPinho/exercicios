@@ -167,3 +167,18 @@ int main() {
  
     return 0;
 }
+// trocar dois numeros de posição
+int main() {
+     int pn,sn;
+    
+  printf("Digite primeiro num\n");
+  scanf("%d",&pn);
+   printf("Digite segundo num\n");
+  scanf("%d",&sn);
+ pn = pn +sn;
+ sn = pn - sn;
+ pn = pn - sn;
+  printf("primeiro num: %d e segundo: %d",pn,sn);
+  
+    return 0;
+}
