@@ -138,3 +138,17 @@ int main() {
  printf("Primeiro nome: %s, Segundo nome: %s, Altura: %d, Idade: %d.", nome,snome,altura,idade);
     return 0;
 }
+
+int main() {
+    int d,dd,result,quo,rest;
+   printf("Digite o dividendo: ");
+   scanf("%d",&d);
+    printf("Digite o divisor: ");
+   scanf("%d",&dd);
+   quo = d/dd;
+   rest = d%dd;
+   printf("O dividendo: %d o divisor: %d o quociente: %d e o resto:%d",d,dd,quo,rest);
+  
+ 
+    return 0;
+}
