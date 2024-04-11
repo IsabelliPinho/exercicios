@@ -152,3 +152,18 @@ int main() {
  
     return 0;
 }
+//tamanho de variaveis
+int main() {
+   int i;
+   double d;
+   char c;
+   float f;
+   printf("--TAMANHO DE VARIAVEIS--\n");
+   printf("Quantidade de bytes int:%zu\n",sizeof(i));
+   printf("Quantidade de bytes double:%zu\n",sizeof(d));
+   printf("Quantidade de bytes char:%zu\n",sizeof(c));
+   printf("Quantidade de bytes float:%zu\n",sizeof(f));
+   
+ 
+    return 0;
+}
