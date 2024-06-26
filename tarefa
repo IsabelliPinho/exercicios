@@ -182,3 +182,17 @@ int main() {
   
     return 0;
 }
+
+//Quadrado da soma
+
+int main()
+{ int i,n,soma = 0,qua;
+  printf("Algarismo n");
+  scanf("%d",&n);
+  for(i=0;i<=n;i++)
+  {
+      soma += i;
+        qua = soma*soma;
+  } printf("%d",qua);
+     return 0;
+}   
