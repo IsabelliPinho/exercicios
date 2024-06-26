@@ -196,3 +196,22 @@ int main()
   } printf("%d",qua);
      return 0;
 }   
+//fibonacci
+int main()
+
+{    
+     int i,n, ant = 0,pant = 1,at;
+        printf("Tamanho");
+        scanf("%d",&n);
+      printf("%d",ant);
+       printf("%d",pant);
+       
+     
+     for (i = 3; i<=n; i++){
+         at = ant+ pant;
+         printf("%d",at);
+         ant = pant;
+         pant = at;
+     }
+    
+}   
