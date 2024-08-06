@@ -215,3 +215,20 @@ int main()
      }
     
 }   
+//fibonnacci+função
+int main() {
+ int fibonnacci(int x){
+      int a=0,b=1,n,i;
+      printf("%d,%d",a,b);
+     for(i=2;i<=x;i++){
+      n = a+b;
+      printf(", %d",n);
+      a = b;
+      b = n;
+     }
+ }
+ int n;
+ printf("dig num\n");
+ scanf("%d",&n);
+ fibonnacci(n);
+}
