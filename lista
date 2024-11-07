@@ -1,1 +1,27 @@
+/*
+#include <stdio.h>
+#include <conio.h>
 
+//Questão 1 -----------------------------------------------------------
+
+/*passagem por valor pois é apenas necessário a cópia dos valores das 
+variáveis*/
+
+void troca(int *ptrx, int *ptry){
+     int aux;
+     aux = *ptrx;
+    *ptrx = *ptry;
+    *ptry = aux;
+    getch();
+}
+
+int main()
+{
+    int x = 10, y = 20;
+     printf("Valor de x inicial = %d e valor de y inicial = %d\n",x,y);
+    troca(&x,&y);
+    printf("Valor de x = %d e valor de y = %d\n",x,y);
+
+    return 0;
+}
+------------------------------------------------------------------------*/
