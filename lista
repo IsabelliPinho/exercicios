@@ -25,8 +25,7 @@ int main()
     return 0;
 }
 ------------------------------------------------------------------------*/
-#include <stdio.h>
-
+#include<stdio.h>
 int main()
 {
         
@@ -37,6 +36,6 @@ int main()
         int **pp = &p;
         
         printf("%d %d %d %d %d", p , *p+2 , **&p,  3**p,  **&p+4);
-   // p = é o endereço de i , *p+2 = valor inicial de i + 2, **&p = valor que está no endereço p, 3**p = valor que p aponta multiplicado por 3, valor que p aponta adicionado 4.      
+   // p = é o endereço de i , *p+2 = valor da variável i + 2, **&p = aponta o valor armazenado no endereço de p, ou seja o valor de i 3**p = valor que p aponta multiplicado por 3, valor no endereço que p aponta adicionado 4.      
     return 0;
 }
