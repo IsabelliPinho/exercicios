@@ -97,3 +97,152 @@ int main() {
         printf("Ano atual: %d\n", pessoa->anoAtual);
         if (calcular(pessoa)) {
             printf("A pessoa já fez aniversário esse
+//lista 2
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX 10
+
+typedef struct {
+    char nome[100];
+    int idade;
+    float nota;
+} Aluno;
+
+void listarAlunos(Aluno *alunos, int tamanho) {
+    if (tamanho == 0) {
+        printf("Nao ha alunos cadastrados.\n");
+        return;
+    }
+    printf("Lista de Alunos:\n");
+    for (int i = 0; i < tamanho; i++) {
+        printf("%d. Nome: %s, Idade: %d, Nota: %.2f\n", i + 1, alunos[i].nome, alunos[i].idade, alunos[i].nota);
+    }
+}
+
+void adicionarAluno(Aluno *alunos, int *tamanho) {
+    if (*tamanho >= MAX) {
+        printf("Nao e possivel adicionar mais alunos. Limite atingido.\n");
+        return;
+    }
+    
+    Aluno novoAluno;
+    
+    printf("Digite o nome do aluno: ");
+    getchar();  
+    fgets(novoAluno.nome, 50, stdin);
+    novoAluno.nome[strcspn(novoAluno.nome, "\n")] = '\0';  
+    
+    printf("Digite a idade do aluno: ");
+    scanf("%d", &novoAluno.idade);
+    
+    printf("Digite a nota do aluno: ");
+    scanf("%f", &novoAluno.nota);
+    
+    alunos[*tamanho] = novoAluno;
+    (*tamanho)++;
+    
+    printf("Aluno adicionado com sucesso!\n");
+}
+
+void editarAluno(Aluno *alunos, int tamanho) {
+    if (tamanho == 0) {
+        printf("Nao ha alunos cadastrados para editar.\n");
+        return;
+    }
+    
+    listarAlunos(alunos, tamanho);
+    
+    int indice;
+    printf("Digite o numero do aluno que deseja editar (1 a %d): ", tamanho);
+    scanf("%d", &indice);
+    
+    if (indice < 1 || indice > tamanho) {
+        printf("Indice invalido.\n");
+        return;
+    }
+    
+    Aluno *aluno = &alunos[indice - 1];
+    
+    printf("Digite o novo nome do aluno: ");
+    getchar(); 
+    fgets(aluno->nome, 50, stdin);
+    aluno->nome[strcspn(aluno->nome, "\n")] = '\0'; 
+    
+    printf("Digite a nova idade do aluno: ");
+    scanf("%d", &aluno->idade);
+    
+    printf("Digite a nova nota do aluno: ");
+    scanf("%f", &aluno->nota);
+    
+    printf("Dados do aluno atualizados com sucesso!\n");
+}
+
+void removerAluno(Aluno *alunos, int *tamanho) {
+    if (*tamanho == 0) {
+        printf("Nao ha alunos cadastrados para remover.\n");
+        return;
+    }
+    
+    listarAlunos(alunos, *tamanho);
+    
+    int indice;
+    printf("Digite o numero do aluno que deseja remover (1 a %d): ", *tamanho);
+    scanf("%d", &indice);
+    
+    if (indice < 1 || indice > *tamanho) {
+        printf("Indice invalido.\n");
+        return;
+    }
+    
+    for (int i = indice - 1; i < *tamanho - 1; i++) {
+        alunos[i] = alunos[i + 1];
+    }
+    
+    (*tamanho)--;
+    
+    printf("Aluno removido com sucesso!\n");
+}
+
+int main() {
+    Aluno *alunos = (Aluno *)malloc(MAX * sizeof(Aluno));
+    int tamanho = 0;
+    int opcao;
+    
+    do {
+        printf("\nSISTEMA DE CADASTRO DE ALUNOS\n");
+        printf("1. Listar Alunos\n");
+        printf("2. Adicionar Aluno\n");
+        printf("3. Editar Aluno\n");
+        printf("4. Remover Aluno\n");
+        printf("5. Sair\n");
+        printf("Escolha uma opcao: ");
+        scanf("%d", &opcao);
+        
+        switch(opcao) {
+            case 1:
+                listarAlunos(alunos, tamanho);
+                break;
+            case 2:
+                adicionarAluno(alunos, &tamanho);
+                break;
+            case 3:
+                editarAluno(alunos, tamanho);
+                break;
+            case 4:
+                removerAluno(alunos, &tamanho);
+                break;
+            case 5:
+                printf("Saindo...\n");
+                break;
+            default:
+                printf("Opcao invalida. Tente novamente.\n");
+                break;
+        }
+    } while(opcao != 5);
+    
+    free(alunos);
+    
+    return 0;
+}
