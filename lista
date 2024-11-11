@@ -45,12 +45,14 @@ b, v+4: Considera a posição inicial do vetor adiante 4 elementos v[0] então v
 consideraria o valor adiante 4 elementos de v, já *v+4: exibiria o valor de
 v[0] adicionado 4
 
-c,#include <stdio.h>
-
-int main() {
-   char v[8] = {'a','b','a','c','a','t','e','\0'};
-   for (int i =8; i>=0;i--){
-       printf("%c\n",v[i]);
-   }
-    return 0;
+c,void inverterVetor(char v[], int tamanho) {
+    int i, temp;
+    for (i = 0; i < tamanho / 2; i++) {
+       
+        temp = v[i];
+        v[i] = v[tamanho - 1 - i];
+        v[tamanho - 1 - i] = temp;
+    }
 }
+
+d, ??? = 0.
