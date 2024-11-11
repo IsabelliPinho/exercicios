@@ -39,3 +39,8 @@ int main()
    // p = é o endereço de i , *p+2 = valor da variável i + 2, **&p = aponta o valor armazenado no endereço de p, ou seja o valor de i 3**p = valor que p aponta multiplicado por 3, valor no endereço que p aponta adicionado 4.      
     return 0;
 }
+
+a, Por que vetores de strings são finalizados com o caractere nulo \0.
+b, v+4: Considera a posição inicial do vetor adiante 4 elementos v[0] então v[4]. O *(v+4): 
+consideraria o valor adiante 4 elementos de v, já *v+4: exibiria o valor de
+v[0] adicionado 4
