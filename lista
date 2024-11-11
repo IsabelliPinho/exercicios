@@ -44,3 +44,13 @@ a, Por que vetores de strings são finalizados com o caractere nulo \0.
 b, v+4: Considera a posição inicial do vetor adiante 4 elementos v[0] então v[4]. O *(v+4): 
 consideraria o valor adiante 4 elementos de v, já *v+4: exibiria o valor de
 v[0] adicionado 4
+
+c,#include <stdio.h>
+
+int main() {
+   char v[8] = {'a','b','a','c','a','t','e','\0'};
+   for (int i =8; i>=0;i--){
+       printf("%c\n",v[i]);
+   }
+    return 0;
+}
