@@ -59,3 +59,27 @@ int main() {
 
     return 0;
 }
+/* Crie um função que conte os dígitos de um determinado número usando recursão.
+Observação: se o usuário inserir o número 250, a saída esperada deve ser: o número
+digitado tem 3 dígitos.*/
+
+#include <stdio.h>
+#include <string.h>
+
+int conta(int num){
+    int digito = 0, valor;
+    while(num!=0){
+    valor = num /=10;
+    digito ++;}
+    return digito;
+    }
+
+
+int main() {
+    int numero;
+     printf("Digite um num: \n");
+    scanf("%d",&numero);
+    printf("Os digitos de %d são: %d\n", numero, conta(numero));
+
+    return 0;
+}
