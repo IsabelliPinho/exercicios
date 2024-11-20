@@ -34,3 +34,28 @@ int main() {
    printf("%d",tam);
     return 0;
 }
+//  Faça uma função que mostre o n-ésimo termo da sequência de Fibonacci.
+
+#include <stdio.h>
+#include <string.h>
+
+int fibo(int num){
+    if (num == 0){
+        return 0;
+    }
+    if (num == 1){
+        return 1;
+    }
+    else{
+        return fibo(num -1) + fibo(num-2);
+    }
+}
+
+int main() {
+    int numero;
+    printf("Digite um num: \n");
+    scanf("%d",&numero);
+    printf("O %d-ésimo termo da sequência de Fibonacci é: %d\n", numero, fibo(numero));
+
+    return 0;
+}
