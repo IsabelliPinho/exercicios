@@ -16,3 +16,21 @@ int main() {
    inverso(vetor);
     return 0;
 }
+//  Faça uma função que retorna o tamanho de uma string passada como parâmetro.
+#include <stdio.h>
+#include <string.h>
+char medir(char *p){
+    int tamanho = 0;
+  while(*p != '\0'){
+      tamanho ++;
+      p++;
+  }
+    return tamanho;
+}
+
+int main() {
+    char palavra[] = "amarelinha";
+    int tam = medir(palavra); 
+   printf("%d",tam);
+    return 0;
+}
