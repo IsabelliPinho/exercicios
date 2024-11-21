@@ -88,3 +88,30 @@ int main() {
 
     return 0;
 }
+/* 5. Faça uma função que encontre o maior elemento de um array de inteiros.
+*/
+#include <stdio.h>
+
+int maior_elemento(int arr[], int tamanho) {
+    if (tamanho == 1) {
+        return arr[0];
+    }
+
+    int maior_restante = maior_elemento(arr + 1, tamanho - 1);
+
+    if (arr[0] > maior_restante) {
+        return arr[0];
+    } else {
+        return maior_restante;
+    }
+}
+
+int main() {
+    int arr[] = {3, 5, 7, 2, 8, 6, 4};
+    int tamanho = sizeof(arr) / sizeof(arr[0]); 
+
+    int maior = maior_elemento(arr, tamanho);
+    printf("O maior elemento do array é: %d\n", maior);
+
+    return 0;
+}
