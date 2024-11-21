@@ -115,3 +115,21 @@ int main() {
 
     return 0;
 }
+/*Ocorrencia string
+*/
+#include <stdio.h>
+
+int ocorre(char *str, char c) {
+    if (*str == '\0') {
+        return 0;
+    }
+    return (*str == c) + ocorre(str + 1, c);
+}
+
+int main() {
+    char str[] = "batata";
+    char c = 'a';
+    printf("O caractere '%c' aparece %d vezes.\n", c, ocorre(str, c));
+    return 0;
+}
+
