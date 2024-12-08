@@ -33,3 +33,17 @@ public static void main (String[]args){
   }
 }}
 */
+/*class Main{
+public static void main(String[]args){
+    int [] array1 = {1,3,5,7,9};
+    int [] array2 = {2,4,6,8,10};
+    int [] array3 = new int [array1.length + array2.length];
+    
+    System.arraycopy(array1,0,array3,0,array1.length);
+    
+    System.arraycopy(array2,0,array3,array1.length,array2.length);
+    
+    for(int i = 0; i<array3.length;i++){
+            System.out.println(array3[i]);
+                                        }
+}   }*/
